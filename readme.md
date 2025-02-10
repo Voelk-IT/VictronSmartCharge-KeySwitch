@@ -41,6 +41,50 @@ Once you save the settings, the device will restart and connect to the configure
 ### 4. Home Assistant Integration 🏠🤖
 You can use **Home Assistant** to automate actions based on the key switch status or other MQTT topics.
 
+#### Example Automations
+
+##### **[Key Switch ON] - Set ESS Mode to KEEP_CHARGED and Battery Life Minimum SOC to 100%**
+```yaml
+alias: "[ Schluesselschalter ] - Set ESS Mode to KEEP_CHARGED and Battery Life 100%"
+description: "Sets ESS Mode to KEEP_CHARGED and Battery Life Minimum SOC to 100% when the key switch turns ON"
+trigger:
+  - entity_id: binary_sensor.schluesselschalter_status
+    to: "on"
+    platform: state
+condition: []
+action:
+  - service: select.select_option
+    data:
+      entity_id: select.victron_settings_ess_mode
+      option: KEEP_CHARGED
+  - service: number.set_value
+    data:
+      entity_id: number.victron_settings_ess_batterylife_minimumsoc_0
+      value: 100
+mode: single
+```
+
+##### **[Key Switch OFF] - Set ESS Mode to SELF_CONSUMPTION and Battery Life Minimum SOC to 20%**
+```yaml
+alias: "[ Schluesselschalter ] - Set ESS Mode to SELF_CONSUMPTION and Battery Life 20%"
+description: "Sets ESS Mode to SELF_CONSUMPTION and Battery Life Minimum SOC to 20% when the key switch turns OFF"
+trigger:
+  - entity_id: binary_sensor.schluesselschalter_status
+    to: "off"
+    platform: state
+condition: []
+action:
+  - service: select.select_option
+    data:
+      entity_id: select.victron_settings_ess_mode
+      option: SELF_CONSUMPTION
+  - service: number.set_value
+    data:
+      entity_id: number.victron_settings_ess_batterylife_minimumsoc_0
+      value: 20
+mode: single
+```
+
 ## Wiring 🔌
 - Connect a **key switch** to **GPIO 21** for state detection. 🔑
 - Make sure the ESP32 is powered with a stable 5V source. ⚡
