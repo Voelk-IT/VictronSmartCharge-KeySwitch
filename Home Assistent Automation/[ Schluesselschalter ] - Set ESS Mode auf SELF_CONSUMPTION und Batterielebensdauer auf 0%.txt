@@ -1,0 +1,21 @@
+alias: >-
+  [ Schluesselschalter ] - Set ESS Mode auf SELF_CONSUMPTION und
+  Batterielebensdauer auf 20%
+description: >-
+  Setzt den ESS Mode auf SELF_CONSUMPTION und den Batterielebensdauer-MinimumSOC
+  auf 20%, wenn der Schlüsselschalter auf 'off' geht
+triggers:
+  - entity_id: binary_sensor.schluesselschalter_status
+    to: "off"
+    trigger: state
+conditions: []
+actions:
+  - data:
+      entity_id: select.victron_settings_ess_mode
+      option: SELF_CONSUMPTION
+    action: select.select_option
+  - data:
+      entity_id: number.victron_settings_ess_batterylife_minimumsoc_0
+      value: 20
+    action: number.set_value
+mode: single

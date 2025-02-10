@@ -1,0 +1,21 @@
+alias: >-
+  [ Schluesselschalter ] - Set ESS Mode auf KEEP_CHARGED und Batterielebensdauer
+  auf 100%
+description: >-
+  Setzt den ESS Mode auf KEEP_CHARGED und den Batterielebensdauer-MinimumSOC auf
+  100%, wenn der Schlüsselschalter auf 'on' geht
+triggers:
+  - entity_id: binary_sensor.schluesselschalter_status
+    to: "on"
+    trigger: state
+conditions: []
+actions:
+  - data:
+      entity_id: select.victron_settings_ess_mode
+      option: KEEP_CHARGED
+    action: select.select_option
+  - data:
+      entity_id: number.victron_settings_ess_batterylife_minimumsoc_0
+      value: 100
+    action: number.set_value
+mode: single
