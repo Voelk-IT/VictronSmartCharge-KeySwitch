@@ -124,5 +124,5 @@ For support or questions, feel free to reach out via [GitHub Issues](https://git
 📧 [Aydin.Voelk@Voelk-IT.de](mailto:Aydin.Voelk@Voelk-IT.de)  
 💻 [GitHub](https://github.com/Voelk-IT/) | 🌐 [Webseite](https://voelk-it.de)  
 
-### 💙 Support my Wokr ♥  
+### 💙 Support my Work ♥  
 [![Donate](https://d-is.de/donate.png)](https://paypal.me/GinaSophieVoelk?country.x=DE&locale.x=de_DE)
