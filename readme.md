@@ -120,7 +120,7 @@ This project is licensed under the MIT License – see the [LICENSE](LICENSE) fi
 For support or questions, feel free to reach out via [GitHub Issues](https://github.com/Voelk-IT/VictronSmartCharge-KeySwitch/issues).
 
 **Aydin Voelk**  
-📱 [0171 29 29 080](tel:+491712929080)  
+📱 [+49 171 29 29 080](tel:+491712929080)  
 📧 [Aydin.Voelk@Voelk-IT.de](mailto:Aydin.Voelk@Voelk-IT.de)  
 💻 [GitHub](https://github.com/Voelk-IT/) | 🌐 [Webseite](https://voelk-it.de)  
 
